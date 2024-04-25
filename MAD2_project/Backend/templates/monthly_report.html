@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Report</title>
+</head>
+<body>
+    <h1>Monthly Report</h1>
+    <p>Hi, {{ user.name }}!</p>
+
+    <p>Here's your monthly report:</p>
+
+    <h2>Shows</h2>
+    {% for booking in bookings %}
+        <h3>{{ booking.show.name }}</h3>
+        <p>
+            Booked at: {{ booking.show.venue.name }}<br>
+            Time: {{ booking.show.time }}<br>
+            Number of tickets: {{ booking.num_tickets }}
+        </p>
+    {% endfor %}
+
+    <h2>Ratings</h2>
+    {% for rating in ratings %}
+        <p>
+            Show: {{ rating.show_id }}<br>
+            Rating: {{ rating.r }}
+        </p>
+    {% endfor %}
+</body>
+</html>
